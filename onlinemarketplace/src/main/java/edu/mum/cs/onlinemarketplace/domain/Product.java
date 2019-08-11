@@ -34,4 +34,10 @@ public class Product {
     @Lob
     private byte[] productImage;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
