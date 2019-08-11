@@ -1,5 +1,6 @@
 package edu.mum.cs.onlinemarketplace.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,9 +12,10 @@ import java.time.LocalDate;
 @Entity
 public class UserOrder {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String status;
+    private Double total;
     @OneToOne
     private Cart cart;
     @ManyToOne
