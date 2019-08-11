@@ -31,5 +31,8 @@ public class User {
     private List<Order>orderList;
     @OneToOne
     private Cart cart;
+    @OneToOne
+    @JoinColumn
+    private CreditCard creditCard;
 
 }
