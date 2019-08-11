@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<form th:action="@{profile/{pid}/edit(pid=${user.id})" th:object="${user}">
-    <label for="name">Name</label>
-    <input type="text" field:th="${name}" id="name">
+<form th:action="@{/profile/{id}/update(id=${user.id})}" th:object="${user}" method="post">
 
-    <label for="email">Name</label>
-    <input type="text" field:th="${email}" id="email">
+
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name">
+
 
     <label for="city">City</label>
     <input type="text" field:th="${city}" id="city">
@@ -22,8 +22,8 @@
     <label for="street">Street</label>
     <input type="text" field:th:="${street}" id="street">
 
-    <label for="zipcode">Zip Code</label>
-    <input type="text" field:th:="${zipcode}" id="zipcode">
+    <label for="zipCode">Zip Code</label>
+    <input type="text" field:th:="${zipCode}" id="zipCode">
 
     <input type="submit" value="Update Profile">
 
