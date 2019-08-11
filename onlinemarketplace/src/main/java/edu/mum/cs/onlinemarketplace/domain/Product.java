@@ -7,12 +7,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Entity
+
 public class Product {
     @Id @GeneratedValue
     private Long id;
@@ -23,13 +25,13 @@ public class Product {
     private double price;
     private int quantiy;
     @OneToOne
-    private User serrer;
+    private User seller;
     private Integer points;
     private LocalDate createDate;
     @OneToMany
     private List<Review>reviewList;
 
-    @JsonIgnore
-    private MultipartFile productImage;
+    @Lob
+    private byte[] productImage;
 
 }

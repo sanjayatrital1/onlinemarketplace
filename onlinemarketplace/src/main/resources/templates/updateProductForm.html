@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Add Product</title>
-</head>
+    <meta charset="UTF-8" >
+    <title>Title</title>
+</head>Update Product
 <body>
-<form th:action="@{/product/{uid}/update{pid}(uid=${user.id})(pid=${product.id})}" th:object="${addproduct}" method="post" enctype="multipart/form-data">
+
+<form th:action="@{/product/{uid (uid=1L)}" th:object="${product}" method="post" enctype="multipart/form-data">
     Name:<input type="text" th:field="*{name}"/><br />
     Description:<textarea th:field="*{description}"></textarea><br />
     Price:<input type="text" th:field="*{price}"/><br />
@@ -13,8 +14,6 @@
     <input type="submit" value="Add Product"/><br />
 
 </form>
-
-<a th:href="/product/delete/{pid}(pid=${product.id})">delete Product</a>
 
 </body>
 </html>
