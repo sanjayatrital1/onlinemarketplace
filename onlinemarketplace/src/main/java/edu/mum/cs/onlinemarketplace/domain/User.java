@@ -28,7 +28,7 @@ public class User {
     @OneToMany
     private List<Address> addressList;
     @OneToMany
-    private List<Order>orderList;
+    private List<UserOrder> userOrderList;
     @OneToOne
     private Cart cart;
     @OneToOne
