@@ -1,18 +1,10 @@
 package edu.mum.cs.onlinemarketplace.service;
 
-
 import edu.mum.cs.onlinemarketplace.domain.Address;
-import edu.mum.cs.onlinemarketplace.domain.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface AddressService {
 
-    public User getUserById(Long id);
-
-
-
-
-
-
+    public List<Address> getAddressByUserId(Long id);
 }
