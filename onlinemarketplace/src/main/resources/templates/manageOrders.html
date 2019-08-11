@@ -24,7 +24,7 @@
     <ul>
         <li th:each="prod: ${userOrder.cart.productList}">
             <span th:text="${prod.name}"></span> &nbsp;
-            <span th:text="${prod.serrer.name}"></span> &nbsp;
+            <span th:text="${prod.seller.name}"></span> &nbsp;
             <span th:text="${prod.price}"></span>
         </li>
     </ul>

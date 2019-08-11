@@ -8,10 +8,10 @@ INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUE
 INSERT INTO `USER_ADDRESS_LIST` (user_id, address_list_id) VALUES (1, 1);
 INSERT INTO `USER_ADDRESS_LIST` (user_id, address_list_id) VALUES (2, 2);
 
-INSERT INTO `PRODUCT` (id, name, description, price, serrer_id, quantiy) VALUES (1, 'Product01', 'Product01 description', 10, 1, 2);
-INSERT INTO `PRODUCT` (id, name, description, price, serrer_id, quantiy) VALUES (2, 'Product02', 'Product02 description', 10, 1, 3);
-INSERT INTO `PRODUCT` (id, name, description, price, serrer_id, quantiy) VALUES (3, 'Product03', 'Product03 description', 10, 1, 2);
-INSERT INTO `PRODUCT` (id, name, description, price, serrer_id, quantiy) VALUES (4, 'Product04', 'Product04 description', 10, 1, 3);
+INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (1, 'Product01', 'Product01 description', 10, 1, 2);
+INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (2, 'Product02', 'Product02 description', 10, 1, 3);
+INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (3, 'Product03', 'Product03 description', 10, 1, 2);
+INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (4, 'Product04', 'Product04 description', 10, 1, 3);
 
 
 
