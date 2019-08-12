@@ -1,46 +1,27 @@
 package edu.mum.cs.onlinemarketplace.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
 @Entity
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue
     private Long id;
-    @NotEmpty
     private String name;
-    @NotEmpty
     private  String description;
     private double price;
     private int quantiy;
-    @ManyToOne(cascade = CascadeType.ALL)
-    private User seller;
+    @OneToOne
+    private User serrer;
     private Integer points;
     private LocalDate createDate;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "product")
+    @OneToMany
     private List<Review>reviewList;
-    private String productImage;
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                '}';
-    }
 }
