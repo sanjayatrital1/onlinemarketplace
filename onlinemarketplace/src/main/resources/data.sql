@@ -34,4 +34,4 @@ INSERT INTO `CART_PRODUCT_LIST` (cart_id, product_list_id) VALUES (2, 4);
 -- INSERT INTO `USER_ORDER` (id, status, cart_id, seller_id, create_date, total) VALUES (1, 'waiting', 1, 1, '2019-08-10', 20);
 -- INSERT INTO `USER_ORDER` (id, status, cart_id, seller_id, create_date, total) VALUES (2, 'waiting', 1, 3, '2019-08-10', 20);
 
-
+INSERT INTO `USER_ORDER` (id, status, create_date) VALUES (1, 'waiting', '2019-08-10');
