@@ -18,7 +18,7 @@ public class Product {
     private double price;
     private int quantiy;
     @OneToOne
-    private User serrer;
+    private User seller;
     private Integer points;
     private LocalDate createDate;
     @OneToMany
