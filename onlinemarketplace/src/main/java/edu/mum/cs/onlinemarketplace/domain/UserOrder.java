@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Entity
 public class UserOrder {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String status;
     private Double total;
