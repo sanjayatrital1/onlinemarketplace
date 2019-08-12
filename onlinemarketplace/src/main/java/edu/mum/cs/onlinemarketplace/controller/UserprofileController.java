@@ -32,8 +32,8 @@ public class UserprofileController {
 
         User user = userService.getUserById(id);
         model.addAttribute("user", user);
-        model.addAttribute("billingAddress", user.getBillingAddress());
-        model.addAttribute("shippingAddress", user.getShippingAddress());
+        model.addAttribute("addresses", user.getAddressList());
+//        model.addAttribute("addresses", addressService.getAddressByUserId(id));
         return "profile";
     }
 
@@ -47,8 +47,7 @@ public class UserprofileController {
     public String updateProfile(@Valid @ModelAttribute("user")User user, @PathVariable Long id, BindingResult result, Model model){
         User u = userService.getUserById(id);
         u.setEmail(user.getName());
-        u.setBillingAddress(user.getBillingAddress());
-        u.setShippingAddress(user.getShippingAddress());
+        u.setAddressList(user.getAddressList());
 
 
         return "redirect:/profile/{id}";

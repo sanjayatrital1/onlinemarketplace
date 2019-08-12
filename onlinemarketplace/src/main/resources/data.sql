@@ -27,4 +27,6 @@ INSERT INTO `CART` (id, total_price, buyer_id, active) VALUES (2, 50, 2, false);
 INSERT INTO `USER_ORDER` (id, status, cart_id, seller_id, create_date, total) VALUES (1, 'waiting', 1, 1, '2019-08-10', 20);
 INSERT INTO `USER_ORDER` (id, status, cart_id, seller_id, create_date, total) VALUES (2, 'waiting', 1, 3, '2019-08-10', 20);
 
+
 INSERT INTO `USER_ORDER` (id, status, create_date) VALUES (1, 'waiting', '2019-08-10');
+

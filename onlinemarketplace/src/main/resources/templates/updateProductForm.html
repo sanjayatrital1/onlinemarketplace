@@ -6,12 +6,12 @@
 </head>Update Product
 <body>
 
-<form th:action="@{/product/{uid}/update{pid}(uis=${user.id})(pid=product.id)}" th:object="${updateProduct}" method="post" enctype="multipart/form-data">
-    Name:<input type="text" th:field="*{name}"/><br />
-    Description:<textarea th:field="*{description}"></textarea><br />
-    Price:<input type="text" th:field="*{price}"/><br />
-    Image:<input type="file"  th:field="*{productImage}"/><br />
-    <input type="submit" value="Add Product"/><br />
+<form th:action="@{/product/update/{pid}(pid=${product.id})}" th:object="${updateProduct}" method="post" enctype="multipart/form-data">
+    Name:<input type="text" th:text="${product.name}" th:field="*{name}"/><br />
+    Description:<textarea th:text="${product.description}" th:field="*{description}"></textarea><br />
+    Price:<input type="text" th:text="${product.price}" th:field="*{price}"/><br />
+    Image:<input type="file"  name="file" /><br />
+    <input type="submit" value="Update Product"/><br />
 
 </form>
 

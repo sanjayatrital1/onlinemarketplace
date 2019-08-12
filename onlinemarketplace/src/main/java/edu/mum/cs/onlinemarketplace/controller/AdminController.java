@@ -15,6 +15,8 @@ public class AdminController {
     @Autowired
     private SellerService sellerService;
 
+
+
     @GetMapping("users/manageSellers")
     public String manageSellerForm(Model model){
         model.addAttribute("manageSeller",sellerService.getAllSeller());
@@ -34,7 +36,7 @@ public class AdminController {
     @PostMapping("/users/removeSeller/{id}")
     public String removeSeller(@PathVariable("id")Long id){
         User newSeller = sellerService.findUserBySellerId(id);
-        newSeller.setStatus("Deny");
+        newSeller.setType("BUYER");
 //        System.out.println("status==============="+status);
         sellerService.save(newSeller);
         return "redirect:/users/manageSellers";
