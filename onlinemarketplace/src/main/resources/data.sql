@@ -1,3 +1,8 @@
+INSERT INTO `USER` (id, name, email, billing_address_id, shipping_address_id, type) VALUES (1, 'First User', 'first.user@gmail.com', 1, 2, 'SELLER');
+INSERT INTO `USER` (id, name, email, billing_address_id, shipping_address_id, type) VALUES (2, 'Second User', 'second.user@gmail.com', 1, 2, 'SELLER');
+INSERT INTO `USER` (id, name, email, billing_address_id, shipping_address_id, type) VALUES (3, 'Third User', 'third.user@gmail.com', 1, 2, 'SELLER');
+
+
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (1, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 1);
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (2, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 2);
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (3, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 3);
