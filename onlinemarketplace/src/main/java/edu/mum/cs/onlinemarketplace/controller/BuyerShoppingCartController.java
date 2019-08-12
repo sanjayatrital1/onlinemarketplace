@@ -1,9 +1,6 @@
 package edu.mum.cs.onlinemarketplace.controller;
 
-import edu.mum.cs.onlinemarketplace.domain.Cart;
-import edu.mum.cs.onlinemarketplace.domain.Product;
-import edu.mum.cs.onlinemarketplace.domain.User;
-import edu.mum.cs.onlinemarketplace.domain.UserOrder;
+import edu.mum.cs.onlinemarketplace.domain.*;
 import edu.mum.cs.onlinemarketplace.service.CartService;
 import edu.mum.cs.onlinemarketplace.service.OrderService;
 import edu.mum.cs.onlinemarketplace.service.ProductService;
@@ -47,11 +44,14 @@ public class BuyerShoppingCartController {
         Long id = 2L;
         Long cartId = 1L;
         User user = userService.getUserById(id);
+        CreditCard creditCard = user.getCreditCard();
         user.setCart(cartService.getCartById(cartId));
 
         Cart cart = user.getCart();
         cart.calculateTotalPrice();
         model.addAttribute("cart", cart);
+        model.addAttribute("user", user);
+        model.addAttribute("creditCard", creditCard);
         return "shoppingCart";
     }
 
@@ -59,15 +59,16 @@ public class BuyerShoppingCartController {
     public String removeProduct(@PathVariable("id") Long id,
                                 @PathVariable("pid") Long pid, Model model, RedirectAttributes redirect){
         Cart cart = cartService.getCartById(id);
-        Product remove = productService.findById(pid);
+        System.out.println(cart.getProductList());
         List<Product> products = cart.getProductList()
                                         .stream()
-                                        .filter(pd -> pd.getId() != remove.getId())
+                                        .filter(pd -> pd.getId() != pid)
                                         .collect(Collectors.toList());
+        System.out.println(products);
         cart.setProductList(products);
         cart.calculateTotalPrice();
         cartService.saveCart(cart);
-        redirect.addFlashAttribute("result", true);
+        redirect.addFlashAttribute("resultRemove", true);
         return "redirect:/buyer/cart";
     }
 
