@@ -3,22 +3,22 @@ package edu.mum.cs.onlinemarketplace.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @Entity
-public class Order {
+public class UserOrder {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String status;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn
+    private User seller;
     private LocalDate deliveryDate;
     private LocalDate createDate;
 
