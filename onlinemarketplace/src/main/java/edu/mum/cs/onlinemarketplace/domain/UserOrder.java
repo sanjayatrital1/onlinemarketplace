@@ -1,5 +1,6 @@
 package edu.mum.cs.onlinemarketplace.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,12 +12,13 @@ import java.time.LocalDate;
 @Entity
 public class UserOrder {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String status;
-    @OneToOne
+    private Double total;
+    @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private User seller;
     private LocalDate deliveryDate;
