@@ -7,6 +7,8 @@ INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUE
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (2, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 2);
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (3, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 3);
 
+
+
 INSERT INTO `USER_ADDRESS_LIST` (user_id, address_list_id) VALUES (1, 1);
 INSERT INTO `USER_ADDRESS_LIST` (user_id, address_list_id) VALUES (2, 2);
 INSERT INTO `USER_ADDRESS_LIST` (user_id, address_list_id) VALUES (3, 3);
