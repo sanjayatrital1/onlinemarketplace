@@ -6,21 +6,20 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @Entity
-public class Review {
+public class Order {
     @Id
     @GeneratedValue
     private Long id;
-    private String description;
     private String status;
+    @OneToOne
+    private Cart cart;
+    private LocalDate deliveryDate;
     private LocalDate createDate;
-    @ManyToOne
-    private User user;
-    @ManyToOne
-    private Product product;
+
 }
