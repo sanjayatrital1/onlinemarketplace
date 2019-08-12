@@ -57,41 +57,41 @@
             <legend>Shipping Address</legend>
         <div class="row">
             <div class="col-25">
-                <label for="state">State:</label>
+                <label for="shipping_state">State:</label>
             </div>
             <div class="col-75">
-                <input type="text" id="state" name="state" placeholder="2 letter state abbreviation" th:field="*{shippingAddress.state}">
-                <p th:if="${#fields.hasErrors('state')}" th:errors="*{state}" th:errorclass="fieldError">Error</p>
+                <input type="text" id="shipping_state" name="state" placeholder="2 letter state abbreviation" th:field="*{shippingAddress.state}">
+                <p th:if="${#fields.hasErrors('state')}" th:errors="*{shippingAddress.state}" th:errorclass="fieldError">Error</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-25">
-                <label for="zip">ZIP Code:</label>
+                <label for="shipping_zip">ZIP Code:</label>
             </div>
             <div class="col-75">
-                <input type="text" id="zip" th:field="*{shippingAddress.zip}" placeholder="Zip Code">
-                <p th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}" th:errorclass="fieldError">Error</p>
+                <input type="text" id="shipping_zip" th:field="*{shippingAddress.zipCode}" placeholder="Zip Code">
+                <p th:if="${#fields.hasErrors('zip')}" th:errors="*{shippingAddress.zipCode}" th:errorclass="fieldError">Error</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-25">
-                <label for="city">City:</label>
+                <label for="shipping_city">City:</label>
             </div>
             <div class="col-75">
-                <input type="text" id="city" th:field="*{shippingAddress.city}" placeholder="city">
-                <p th:if="${#fields.hasErrors('city')}" th:errors="*{city}" th:errorclass="fieldError">Error</p>
+                <input type="text" id="shipping_city" th:field="*{shippingAddress.city}" placeholder="city">
+                <p th:if="${#fields.hasErrors('city')}" th:errors="*{shippingAddress.city}" th:errorclass="fieldError">Error</p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-25">
-                <label for="street">Street:</label>
+                <label for="shipping_street">Street:</label>
             </div>
             <div class="col-75">
-                <input type="text" id="street" th:field="*{shippingAddress.street}" placeholder="street">
-                <p th:if="${#fields.hasErrors('street')}" th:errors="*{street}" th:errorclass="fieldError">Error</p>
+                <input type="text" id="shipping_street" th:field="*{shippingAddress.street}" placeholder="street">
+                <p th:if="${#fields.hasErrors('street')}" th:errors="*{shippingAddress.street}" th:errorclass="fieldError">Error</p>
             </div>
         </div>
         </fieldset>
@@ -103,41 +103,41 @@
             <legend>Billing Address</legend>
             <div class="row">
                 <div class="col-25">
-                    <label for="state">State:</label>
+                    <label for="billing_state">State:</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="state" name="state" placeholder="2 letter state abbreviation" th:field="*{billingAddress.state}">
-                    <p th:if="${#fields.hasErrors('state')}" th:errors="*{state}" th:errorclass="fieldError">Error</p>
+                    <input type="text" id="billing_state" name="state" placeholder="2 letter state abbreviation" th:field="*{billingAddress.state}">
+                    <p th:if="${#fields.hasErrors('state')}" th:errors="*{billingAddress.state}" th:errorclass="fieldError">Error</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
-                    <label for="zip">ZIP Code:</label>
+                    <label for="billing_zip">ZIP Code:</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="zip" th:field="*{billingAddress.zip}" placeholder="Zip Code">
-                    <p th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}" th:errorclass="fieldError">Error</p>
+                    <input type="text" id="billing_zip" th:field="*{billingAddress.zipCode}" placeholder="Zip Code">
+                    <p th:if="${#fields.hasErrors('zip')}" th:errors="*{billingAddress.zipCode}" th:errorclass="fieldError">Error</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
-                    <label for="city">City:</label>
+                    <label for="billing_city">City:</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="city" th:field="*{billingAddress.city}" placeholder="city">
-                    <p th:if="${#fields.hasErrors('city')}" th:errors="*{city}" th:errorclass="fieldError">Error</p>
+                    <input type="text" id="billing_city" th:field="*{billingAddress.city}" placeholder="city">
+                    <p th:if="${#fields.hasErrors('city')}" th:errors="*{billingAddress.city}" th:errorclass="fieldError">Error</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
-                    <label for="street">Street:</label>
+                    <label for="billing_street">Street:</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="street" th:field="*{billingAddress.street}" placeholder="street">
-                    <p th:if="${#fields.hasErrors('street')}" th:errors="*{street}" th:errorclass="fieldError">Error</p>
+                    <input type="text" id="billing_street" th:field="*{billingAddress.street}" placeholder="street">
+                    <p th:if="${#fields.hasErrors('street')}" th:errors="*{billingAddress.street}" th:errorclass="fieldError">Error</p>
                 </div>
             </div>
         </fieldset>

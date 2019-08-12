@@ -92,7 +92,7 @@ public class BuyerShoppingCartController {
             UserOrder order = new UserOrder();
             order.setStatus("waiting");
             order.setCart(cart);
-            order.setTotal(pds.stream().mapToDouble(p -> p.getPrice()).sum());
+            //order.setTotal(pds.stream().mapToDouble(p -> p.getPrice()).sum());
             order.setCreateDate(LocalDate.now());
             order.setSeller(userService.getUserById((Long) me.getKey()));
             orderService.saveOrder(order);
