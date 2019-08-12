@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class CreditCard {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -20,6 +20,6 @@ public class CreditCard {
 
     private Long number;
 
-    @OneToOne(mappedBy = "creditCard")
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "creditCard")
     private User user;
 }

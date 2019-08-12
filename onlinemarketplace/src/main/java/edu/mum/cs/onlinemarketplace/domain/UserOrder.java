@@ -11,12 +11,12 @@ import java.time.LocalDate;
 @Entity
 public class UserOrder {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String status;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private User seller;
     private LocalDate deliveryDate;
