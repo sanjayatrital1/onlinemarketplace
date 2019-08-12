@@ -10,7 +10,4 @@ import java.util.List;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address,Long> {
-
-    @Query("SELECT a FROM Address a WHERE a.user = :id")
-    List<Address> getAddressByUserID(@Param("id") Long id);
 }
