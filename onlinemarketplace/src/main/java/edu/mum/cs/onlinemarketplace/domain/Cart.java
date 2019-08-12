@@ -11,11 +11,19 @@ import java.util.List;
 @Entity
 public class Cart {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double totalPrice;
-    @OneToMany
+
+    private boolean active;
+
+    @OneToMany(cascade = CascadeType.ALL)
+
     private List<Product>productList;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private User buyer;
+
+    public void calculateTotalPrice(){
+        this.totalPrice = productList.stream().mapToDouble(Product::getPrice).sum();
+    }
 }
