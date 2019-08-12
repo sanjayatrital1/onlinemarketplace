@@ -12,8 +12,7 @@ import java.util.List;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
+    @GeneratedValue
     private Long id;
     private String name;
     private String email;
@@ -22,29 +21,15 @@ public class User {
     private  String status;
     private LocalDate createDate;
     private  Integer points;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
+    @OneToMany
     private List<Review> reviewList;
-//    @ManyToMany(cascade = CascadeType.ALL)
-//    private List<User> userList;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address billingAddress;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address shippingAddress;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "seller")
-    private List<UserOrder> userOrderList;
-    @OneToOne(cascade = CascadeType.ALL,mappedBy = "buyer")
+    @ManyToMany
+    private List<User> userList;
+    @OneToMany
+    private List<Address> addressList;
+    @OneToMany
+    private List<Order>orderList;
+    @OneToOne
     private Cart cart;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn
-    private CreditCard creditCard;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "seller")
-    private List<Product>productList;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                '}';
-    }
 
 }
