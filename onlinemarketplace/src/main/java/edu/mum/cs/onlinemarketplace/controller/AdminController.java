@@ -36,7 +36,7 @@ public class AdminController {
     @PostMapping("/users/removeSeller/{id}")
     public String removeSeller(@PathVariable("id")Long id){
         User newSeller = sellerService.findUserBySellerId(id);
-        newSeller.setStatus("Deny");
+        newSeller.setType("BUYER");
 //        System.out.println("status==============="+status);
         sellerService.save(newSeller);
         return "redirect:/users/manageSellers";
