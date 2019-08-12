@@ -5,16 +5,18 @@
     <title>Add Product</title>
 </head>
 <body>
-<form th:action="@{/product/{uid}/update{pid}(uid=${user.id})(pid=${product.id})}" th:object="${addproduct}" method="post" enctype="multipart/form-data">
+
+${userId}
+<form th:action="@{/product/?uid=1L}" th:object="${newProduct}" method="post" enctype="multipart/form-data">
     Name:<input type="text" th:field="*{name}"/><br />
     Description:<textarea th:field="*{description}"></textarea><br />
     Price:<input type="text" th:field="*{price}"/><br />
-    Image:<input type="file"  th:field="*{productImage}"/><br />
+    Select Image:<input type="file"  name="file"/><br />
     <input type="submit" value="Add Product"/><br />
 
 </form>
 
-<a th:href="/product/delete/{pid}(pid=${product.id})">delete Product</a>
+<!--<a th:href="@{/product/delete/{pid}(pid=${product.id})}">delete Product</a>-->
 
 </body>
 </html>

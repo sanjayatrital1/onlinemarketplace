@@ -9,14 +9,24 @@
     <div>
 
         <img src:th="@{/img/userimg.png}">
-        Name: <p></p>
-        Email: <p></p>
-        City: <p></p>
-        Street: <p></p>
-        State: <p></p>
-        ZipCode: <p></p>
+       <p> Name: <span th:text="${user.name}"></span></p>
+       <p>Email: <span th:text="${user.email}"></span></p>
 
-        <form th:action="@{/profile/{id}/edit}">
+
+        <div th:each="a:${addresses}">
+
+        <h5>Address 1</h5>
+            <p> City: <span th:text="${a.city}"></span></p>
+            <p>Street: <span th:text="${a.street}"></span></p>
+            <p>State: <span th:text="${a.state}"></span></p>
+            <p>ZipCode: <span th:text="${a.zipCode}"></span></p>
+
+
+
+
+        </div>
+
+        <form th:action="@{/profile/{uid}/edit(uid=${user.id})}"  method="get">
             <input type="submit" value="Edit Profile">
         </form>
 

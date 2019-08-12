@@ -41,12 +41,12 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-    @Bean
-    public MappingJackson2JsonView jsonView() {
-        MappingJackson2JsonView jsonView = new MappingJackson2JsonView();
-        jsonView.setPrettyPrint(true);
-        return jsonView;
-    }
+//    @Bean
+//    public MappingJackson2JsonView jsonView() {
+//        MappingJackson2JsonView jsonView = new MappingJackson2JsonView();
+//        jsonView.setPrettyPrint(true);
+//        return jsonView;
+//    }
 //    @Bean
 //    public MarshallingView xmlView() {
 //        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
