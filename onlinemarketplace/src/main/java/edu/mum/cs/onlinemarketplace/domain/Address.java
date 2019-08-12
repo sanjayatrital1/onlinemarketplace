@@ -20,7 +20,4 @@ public class Address {
     private LocalDate createDate;
     private String status;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private User user;
-
 }

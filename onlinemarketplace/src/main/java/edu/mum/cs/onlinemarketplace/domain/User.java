@@ -26,8 +26,10 @@ public class User {
     private List<Review> reviewList;
 //    @ManyToMany(cascade = CascadeType.ALL)
 //    private List<User> userList;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
-    private List<Address> addressList;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address billingAddress;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address shippingAddress;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "seller")
     private List<UserOrder> userOrderList;
     @OneToOne(cascade = CascadeType.ALL,mappedBy = "buyer")
