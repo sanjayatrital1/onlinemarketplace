@@ -14,8 +14,16 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double totalPrice;
+
+    private boolean active;
+
     @OneToMany(cascade = CascadeType.ALL)
+
     private List<Product>productList;
     @OneToOne(cascade = CascadeType.ALL)
     private User buyer;
+
+    public void calculateTotalPrice(){
+        this.totalPrice = productList.stream().mapToDouble(Product::getPrice).sum();
+    }
 }

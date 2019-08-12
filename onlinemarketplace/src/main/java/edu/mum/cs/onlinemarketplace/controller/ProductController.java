@@ -86,16 +86,16 @@ public class ProductController {
     @PostMapping("/product/delete/{pid}")
     public String deleteProduct(@PathVariable Long pid){
          productService.delete(pid);
-         return "showProductDetails";
+         return "redirect:/";
     }
 
-    @GetMapping(value = "/product/update{pid}")
+    @GetMapping(value = "/product/update/{pid}")
     public String updateProductForm(@PathVariable(value = "pid",required = false) Long pid, @ModelAttribute("updateProduct") Product product,Model model){
         model.addAttribute("product",productService.findById(pid));
         return "updateProductForm";
     }
 
-    @PostMapping("/product/update{pid}")
+    @PostMapping("/product/update/{pid}")
     public String updateProduct(Product product, @PathVariable Long pid){
         Product updateProduct = productService.findById(pid);
         updateProduct.setName(product.getName());
@@ -103,7 +103,7 @@ public class ProductController {
         updateProduct.setPrice(product.getPrice());
        // updateProduct.setProductImage(product.getProductImage());
         productService.save(updateProduct);
-        return "redirect:/showProductDetais";
+        return "redirect:/";
     }
 
     @GetMapping("/error")
