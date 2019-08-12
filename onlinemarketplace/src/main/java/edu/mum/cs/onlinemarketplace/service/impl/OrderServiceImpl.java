@@ -20,7 +20,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<UserOrder> getOrdersBySellerId(Long id) {
-        return orderRepository.findAll();
+        return orderRepository.findOrderBySellerId(id);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class OrderServiceImpl implements OrderService {
     public UserOrder saveOrder(UserOrder userOrder) {
         System.out.println(userOrder.getStatus());
         if(userOrder.getStatus().equals("shipped")){
-//            LocalDate date = LocalDate.now();
-//            userOrder.setDeliveryDate(date.plusDays(5));
+            LocalDate date = LocalDate.now();
+            userOrder.setDeliveryDate(date.plusDays(5));
         }
         return orderRepository.save(userOrder);
     }
