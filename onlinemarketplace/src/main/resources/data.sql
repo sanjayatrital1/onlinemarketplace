@@ -2,16 +2,6 @@ INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUE
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (2, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 2);
 INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (3, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 3);
 
-
-INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (1, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 1);
-INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (2, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 2);
-INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (3, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 3);
-
-
-INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (1, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 1);
-INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (2, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 2);
-INSERT INTO `ADDRESS` (id, city, state, status, street, zip_code, user_id) VALUES (3, 'Fairfield', 'IA', 'Shipping', '1000 North 4th', '52557', 3);
-
 INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (1, 'Product01', 'Product01 description', 10, 1, 2);
 INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (2, 'Product02', 'Product02 description', 10, 1, 3);
 INSERT INTO `PRODUCT` (id, name, description, price, seller_id, quantiy) VALUES (3, 'Product03', 'Product03 description', 10, 1, 2);
@@ -45,6 +35,11 @@ INSERT INTO `PRODUCT` (id, name, description, price,  quantiy) VALUES (4, 'Produ
 
 INSERT INTO `CART` (id, total_price) VALUES (1, 30);
 INSERT INTO `CART` (id, total_price) VALUES (2, 50);
+
+
+INSERT INTO `USER_ORDER` (id, status, create_date) VALUES (1, 'waiting', '2019-08-10');
+
+
 
 
 INSERT INTO `USER_ORDER` (id, status, create_date) VALUES (1, 'waiting', '2019-08-10');
