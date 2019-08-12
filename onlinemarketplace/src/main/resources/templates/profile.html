@@ -13,17 +13,20 @@
        <p>Email: <span th:text="${user.email}"></span></p>
 
 
-        <div th:each="a:${addresses}">
-
-        <h5>Address 1</h5>
+        <div th:each="a:${shippingAddress}">
+            <h5>Shipping Address</h5>
             <p> City: <span th:text="${a.city}"></span></p>
             <p>Street: <span th:text="${a.street}"></span></p>
             <p>State: <span th:text="${a.state}"></span></p>
             <p>ZipCode: <span th:text="${a.zipCode}"></span></p>
+        </div>
 
-
-
-
+        <div th:each="a:${billingAddress}">
+            <h5>Billing Address</h5>
+            <p> City: <span th:text="${a.city}"></span></p>
+            <p>Street: <span th:text="${a.street}"></span></p>
+            <p>State: <span th:text="${a.state}"></span></p>
+            <p>ZipCode: <span th:text="${a.zipCode}"></span></p>
         </div>
 
         <form th:action="@{/profile/{uid}/edit(uid=${user.id})}"  method="get">

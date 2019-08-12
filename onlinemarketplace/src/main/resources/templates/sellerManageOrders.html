@@ -14,12 +14,12 @@
     <span th:text="${userOrder.cart.buyer.name}" ></span> &nbsp;
     <span th:text="${userOrder.status}" ></span>
     <br />
-    <span th:text="${userOrder.cart.buyer.addressList[0].street}" ></span>
+    <span th:text="${userOrder.cart.buyer.shippingAddress.street}" ></span>
     <br />
-    <span th:text="${userOrder.cart.buyer.addressList[0].city}" ></span> &nbsp;
-    <span th:text="${userOrder.cart.buyer.addressList[0].state}" ></span>
+    <span th:text="${userOrder.cart.buyer.shippingAddress.city}" ></span> &nbsp;
+    <span th:text="${userOrder.cart.buyer.shippingAddress.state}" ></span>
     <br />
-    <span th:text="${userOrder.cart.buyer.addressList[0].zipCode}" ></span>
+    <span th:text="${userOrder.cart.buyer.shippingAddress.zipCode}" ></span>
     <br />
     <ul>
         <li th:each="prod: ${userOrder.cart.productList}">
