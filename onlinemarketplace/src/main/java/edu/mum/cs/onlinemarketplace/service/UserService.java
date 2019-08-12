@@ -12,4 +12,8 @@ public interface UserService {
 
 
     public User getUserById(Long id);
+
+    User findUserById(Long id);
+
+
 }
