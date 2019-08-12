@@ -1,3 +1,4 @@
+
 INSERT INTO `USER` (id, name, email) VALUES (1, 'First User', 'first.user@gmail.com');
 INSERT INTO `USER` (id, name, email) VALUES (2, 'Second User', 'second.user@gmail.com');
 INSERT INTO `USER` (id, name, email) VALUES (3, 'Third User', 'third.user@gmail.com');
@@ -42,3 +43,4 @@ INSERT INTO `CART` (id, total_price) VALUES (2, 50);
 
 
 INSERT INTO `USER_ORDER` (id, status, create_date) VALUES (1, 'waiting', '2019-08-10');
+
