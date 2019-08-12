@@ -15,6 +15,8 @@ public class AdminController {
     @Autowired
     private SellerService sellerService;
 
+
+
     @GetMapping("users/manageSellers")
     public String manageSellerForm(Model model){
         model.addAttribute("manageSeller",sellerService.getAllSeller());

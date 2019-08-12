@@ -16,10 +16,10 @@ public class AddressServiceImpl implements AddressService {
     @Autowired
     AddressRepository addressRepository;
 
-//    @Override
-//    public List<Address> getAddressByUserId(Long id) {
-//        return addressRepository.getAddressByUserID(id);
-//    }
+    @Override
+    public List<Address> getAddressByUserId(Long id) {
+        return addressRepository.getAddressByUserID(id);
+    }
 
 
 }

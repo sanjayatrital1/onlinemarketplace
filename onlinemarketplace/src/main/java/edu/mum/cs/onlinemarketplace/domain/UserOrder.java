@@ -15,7 +15,6 @@ public class UserOrder {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String status;
-    private Double total;
     @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;
     @ManyToOne(cascade = CascadeType.ALL)
